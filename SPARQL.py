@@ -153,13 +153,14 @@ if __name__ == '__main__':
     
     
     g = Graph()
-    g.parse("xmlTriples.xml", format="xml")
+    #g.parse("xmlTriples.xml", format="xml")
+    g.parse("turtleTriples.txt", format="ttl")
     
     
     
-    #g.add( (bob, RDF.type, FOAF.Person))
-    #g.add( (linda, RDF.type, FOAF.Person))
-    #g.add( (john, RDF.type, FOAF.Person))
+    g.add( (bob, RDF.type, FOAF.Person))
+    g.add( (linda, RDF.type, FOAF.Person))
+    g.add( (john, RDF.type, FOAF.Person))
     
     
     print(num_triples(g))
