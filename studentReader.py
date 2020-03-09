@@ -6,9 +6,26 @@ if __name__ == "__main__":
     toWrite = []
     num = ""
 
-    toWrite.append("ex:Student a rdfs:Class .")
+    toWrite.append("ex:Student a rdfs:Class ;\n rdfs:label \"Student class\"@en .")
     toWrite.append("ex:name a rdf:Property .")
+    toWrite.append("ex:term a rdfs:Class ;\n rdfs:label \"term class\"@en .")
+    toWrite.append("ex:grade a rdfs:Class ;\n rdfs:label \"grade class\"@en .")
     toWrite.append("ex:Course a rdf:Property ;\n    rdfs:domain ex:Student ;\n    rdfs:range ex:term ;\n    rdfs:range ex:grade .")
+    toWrite.append("\n")
+    toWrite.append("\"A+\" rdf:type ex:grade")
+    toWrite.append("\"A\" rdf:type ex:grade")
+    toWrite.append("\"A-\" rdf:type ex:grade")
+    toWrite.append("\"B+\" rdf:type ex:grade")
+    toWrite.append("\"B\" rdf:type ex:grade")
+    toWrite.append("\"B-\" rdf:type ex:grade")
+    toWrite.append("\"C+\" rdf:type ex:grade")
+    toWrite.append("\"C\" rdf:type ex:grade")
+    toWrite.append("\"C-\" rdf:type ex:grade")
+    toWrite.append("\"D+\" rdf:type ex:grade")
+    toWrite.append("\"D\" rdf:type ex:grade")
+    toWrite.append("\"D-\" rdf:type ex:grade")
+    toWrite.append("\"F\" rdf:type ex:grade")
+    toWrite.append("\n")
 
     for line in f:
         l = line.split()
