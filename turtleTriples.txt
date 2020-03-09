@@ -25478,3 +25478,248 @@ ex:JPER298 ex:covers <http://dbpedia.org/resource/Jazz> .
 <http://dbpedia.org/resource/Jazz> foaf:name "Jazz" .
 ex:JPER298 rdfs:seeAlso <http://www.concordia.ca/academics/undergraduate/calendar/current/sec31.html> .
 
+
+ex:Student a rdfs:Class .
+ex:name a rdf:Property .
+ex:Course a rdf:Property ;
+    rdfs:domain ex:Student ;
+    rdfs:range ex:term ;
+    rdfs:range ex:grade .
+ex:34515134 a ex:Student .
+ex:34515134 foaf:name "John Smith" .
+ex:34515134 ex:COMP228 "A" .
+ex:34515134 ex:COMP228 "Fall 2018" .
+ex:34515134 ex:COMP232 "B" .
+ex:34515134 ex:COMP232 "Fall 2018" .
+ex:34515134 ex:COMP233 "C+" .
+ex:34515134 ex:COMP233 "Winter 2018" .
+ex:34515134 ex:COMP248 "B-" .
+ex:34515134 ex:COMP248 "Winter 2018" .
+ex:34515134 ex:COMP249 "A-" .
+ex:34515134 ex:COMP249 "Fall 2019" .
+ex:34515134 ex:COMP335 "A-" .
+ex:34515134 ex:COMP335 "Fall 2019" .
+ex:34515134 ex:COMP346 "C+" .
+ex:34515134 ex:COMP346 "Winter 2019" .
+ex:34515134 ex:COMP348 "F" .
+ex:34515134 ex:COMP348 "Winter 2019" .
+ex:34515134 ex:COMP348 "C" .
+ex:34515134 ex:COMP348 "Fall 2020" .
+ex:34515134 ex:COMP352 "B+" .
+ex:34515134 ex:COMP352 "Winter 2019" .
+ex:34515134 ex:COMP353 "B-" .
+ex:34515134 ex:COMP353 "Fall 2020" .
+ex:34515134 ex:COMP354 "B-" .
+ex:34515134 ex:COMP354 "Fall 2020" .
+ex:13459814 a ex:Student .
+ex:13459814 foaf:name "Jane Doe" .
+ex:13459814 ex:COMP228 "C+" .
+ex:13459814 ex:COMP228 "Fall 2019" .
+ex:13459814 ex:COMP232 "C-" .
+ex:13459814 ex:COMP232 "Fall 2019" .
+ex:13459814 ex:COMP248 "A+" .
+ex:13459814 ex:COMP248 "Fall 2019" .
+ex:13459814 ex:COMP249 "A" .
+ex:13459814 ex:COMP249 "Fall 2020" .
+ex:13459814 ex:COMP353 "C-" .
+ex:13459814 ex:COMP353 "Fall 2020" .
+ex:13459814 ex:COMP354 "B-" .
+ex:13459814 ex:COMP354 "Fall 2020" .
+ex:62409532 a ex:Student .
+ex:62409532 foaf:name "Little Mac" .
+ex:62409532 ex:COMP228 "A+" .
+ex:62409532 ex:COMP228 "Fall 2019" .
+ex:62409532 ex:COMP232 "A" .
+ex:62409532 ex:COMP232 "Fall 2019" .
+ex:62409532 ex:COMP248 "A-" .
+ex:62409532 ex:COMP248 "Fall 2019" .
+ex:62409532 ex:COMP249 "B+" .
+ex:62409532 ex:COMP249 "Winter 2019" .
+ex:23459024 a ex:Student .
+ex:23459024 foaf:name "Dwayne Johnson" .
+ex:23459024 ex:COMP248 "B" .
+ex:23459024 ex:COMP248 "Fall 2017" .
+ex:23459024 ex:COMP249 "A+" .
+ex:23459024 ex:COMP249 "Fall 2017" .
+ex:84935313 a ex:Student .
+ex:84935313 foaf:name "Handsy Hank" .
+ex:84935313 ex:COMP248 "F" .
+ex:84935313 ex:COMP248 "Fall 2015" .
+ex:84935313 ex:COMP248 "F" .
+ex:84935313 ex:COMP248 "Winter 2015" .
+ex:84935313 ex:COMP248 "C-" .
+ex:84935313 ex:COMP248 "Fall 2016" .
+ex:65240394 a ex:Student .
+ex:65240394 foaf:name "Wallace Williams" .
+ex:65240394 ex:COMP228 "C+" .
+ex:65240394 ex:COMP228 "Fall 2017" .
+ex:65240394 ex:COMP232 "B-" .
+ex:65240394 ex:COMP232 "Fall 2017" .
+ex:65240394 ex:COMP233 "C" .
+ex:65240394 ex:COMP233 "Fall 2017" .
+ex:65240394 ex:COMP248 "F" .
+ex:65240394 ex:COMP248 "Fall 2017" .
+ex:65240394 ex:COMP248 "B" .
+ex:65240394 ex:COMP248 "Winter 2017" .
+ex:65240394 ex:COMP249 "B+" .
+ex:65240394 ex:COMP249 "Fall 2018" .
+ex:65240394 ex:COMP335 "B+" .
+ex:65240394 ex:COMP335 "Fall 2018" .
+ex:65240394 ex:COMP345 "B" .
+ex:65240394 ex:COMP345 "Winter 2018" .
+ex:65240394 ex:COMP348 "C-" .
+ex:65240394 ex:COMP348 "Winter 2018" .
+ex:65240394 ex:COMP352 "F" .
+ex:65240394 ex:COMP352 "Winter 2018" .
+ex:65240394 ex:COMP352 "B" .
+ex:65240394 ex:COMP352 "Fall 2019" .
+ex:65240394 ex:COMP353 "C+" .
+ex:65240394 ex:COMP353 "Fall 2019" .
+ex:52348934 a ex:Student .
+ex:52348934 foaf:name "Bruce Wayne" .
+ex:52348934 ex:COMP232 "A+" .
+ex:52348934 ex:COMP232 "Fall 2010" .
+ex:52348934 ex:COMP248 "A+" .
+ex:52348934 ex:COMP248 "Fall 2011" .
+ex:52348934 ex:COMP249 "C-" .
+ex:52348934 ex:COMP249 "Fall 2012" .
+ex:52348934 ex:COMP353 "C-" .
+ex:52348934 ex:COMP353 "Fall 2013" .
+ex:52438934 a ex:Student .
+ex:52438934 foaf:name "Abraham Simpson" .
+ex:52438934 ex:COMP228 "B+" .
+ex:52438934 ex:COMP228 "Fall 2010" .
+ex:52438934 ex:COMP232 "B-" .
+ex:52438934 ex:COMP232 "Fall 2010" .
+ex:52438934 ex:COMP233 "B+" .
+ex:52438934 ex:COMP233 "Winter 2010" .
+ex:52438934 ex:COMP248 "B" .
+ex:52438934 ex:COMP248 "Winter 2010" .
+ex:52438934 ex:COMP249 "B-" .
+ex:52438934 ex:COMP249 "Fall 2012" .
+ex:52438934 ex:COMP335 "B+" .
+ex:52438934 ex:COMP335 "Fall 2012" .
+ex:52438934 ex:COMP345 "B" .
+ex:52438934 ex:COMP345 "Winter 2012" .
+ex:52438934 ex:COMP346 "B+" .
+ex:52438934 ex:COMP346 "Winter 2012" .
+ex:52438934 ex:COMP348 "B-" .
+ex:52438934 ex:COMP348 "Fall 2014" .
+ex:52438934 ex:COMP352 "B" .
+ex:52438934 ex:COMP352 "Fall 2014" .
+ex:52438934 ex:COMP353 "B" .
+ex:52438934 ex:COMP353 "Winter 2014" .
+ex:52438934 ex:COMP354 "B-" .
+ex:52438934 ex:COMP354 "Winter 2014" .
+ex:52438934 ex:COMP371 "F" .
+ex:52438934 ex:COMP371 "Fall 2016" .
+ex:52438934 ex:COMP371 "B-" .
+ex:52438934 ex:COMP371 "Fall 2018" .
+ex:52438934 ex:COMP376 "B+" .
+ex:52438934 ex:COMP376 "Fall 2018" .
+ex:52438934 ex:COMP472 "B" .
+ex:52438934 ex:COMP472 "Winter 2018" .
+ex:52438934 ex:COMP476 "B" .
+ex:52438934 ex:COMP476 "Winter 2018" .
+ex:52438934 ex:COMP477 "B-" .
+ex:52438934 ex:COMP477 "Fall 2020" .
+ex:24590345 a ex:Student .
+ex:24590345 foaf:name "Leonard Nimoy" .
+ex:24590345 ex:COMP228 "A+" .
+ex:24590345 ex:COMP228 "Fall 2016" .
+ex:24590345 ex:COMP232 "A+" .
+ex:24590345 ex:COMP232 "Fall 2016" .
+ex:24590345 ex:COMP233 "A+" .
+ex:24590345 ex:COMP233 "Fall 2016" .
+ex:24590345 ex:COMP248 "A+" .
+ex:24590345 ex:COMP248 "Fall 2016" .
+ex:24590345 ex:COMP249 "A+" .
+ex:24590345 ex:COMP249 "Winter 2016" .
+ex:24590345 ex:COMP335 "A+" .
+ex:24590345 ex:COMP335 "Winter 2016" .
+ex:24590345 ex:COMP345 "A+" .
+ex:24590345 ex:COMP345 "Fall 2017" .
+ex:24590345 ex:COMP346 "A+" .
+ex:24590345 ex:COMP346 "Fall 2017" .
+ex:24590345 ex:COMP348 "A+" .
+ex:24590345 ex:COMP348 "Fall 2017" .
+ex:24590345 ex:COMP352 "A+" .
+ex:24590345 ex:COMP352 "Fall 2017" .
+ex:24590345 ex:COMP353 "A+" .
+ex:24590345 ex:COMP353 "Winter 2017" .
+ex:24590345 ex:COMP354 "A-" .
+ex:24590345 ex:COMP354 "Winter 2017" .
+ex:24590345 ex:COMP371 "A+" .
+ex:24590345 ex:COMP371 "Winter 2017" .
+ex:24590345 ex:COMP376 "A+" .
+ex:24590345 ex:COMP376 "Winter 2017" .
+ex:24590345 ex:COMP472 "A+" .
+ex:24590345 ex:COMP472 "Fall 2018" .
+ex:24590345 ex:COMP476 "A+" .
+ex:24590345 ex:COMP476 "Fall 2018" .
+ex:24590345 ex:COMP477 "A+" .
+ex:24590345 ex:COMP477 "Fall 2018" .
+ex:54825431 a ex:Student .
+ex:54825431 foaf:name "Bricka Block" .
+ex:54825431 ex:COMP248 "B-" .
+ex:54825431 ex:COMP248 "Fall 2019" .
+ex:54825431 ex:COMP249 "B+" .
+ex:54825431 ex:COMP249 "Winter 2019" .
+ex:54825431 ex:COMP345 "A" .
+ex:54825431 ex:COMP345 "Fall 2020" .
+ex:29834577 a ex:Student .
+ex:29834577 foaf:name "Generic Name" .
+ex:29834577 ex:COMP248 "C-" .
+ex:29834577 ex:COMP248 "Fall 2018" .
+ex:29834577 ex:COMP249 "F" .
+ex:29834577 ex:COMP249 "Winter 2018" .
+ex:29834577 ex:COMP249 "F" .
+ex:29834577 ex:COMP249 "Fall 2019" .
+ex:67534323 a ex:Student .
+ex:67534323 foaf:name "Debbie Downer" .
+ex:67534323 ex:COMP228 "B-" .
+ex:67534323 ex:COMP228 "Fall 2008" .
+ex:67534323 ex:COMP232 "C-" .
+ex:67534323 ex:COMP232 "Fall 2009" .
+ex:67534323 ex:COMP233 "A-" .
+ex:67534323 ex:COMP233 "Fall 2010" .
+ex:67534323 ex:COMP248 "B-" .
+ex:67534323 ex:COMP248 "Fall 2011" .
+ex:67534323 ex:COMP249 "B-" .
+ex:67534323 ex:COMP249 "Fall 2012" .
+ex:67534323 ex:COMP335 "B-" .
+ex:67534323 ex:COMP335 "Fall 2013" .
+ex:67534323 ex:COMP345 "C-" .
+ex:67534323 ex:COMP345 "Fall 2014" .
+ex:67534323 ex:COMP346 "B-" .
+ex:67534323 ex:COMP346 "Fall 2015" .
+ex:67534323 ex:COMP353 "C-" .
+ex:67534323 ex:COMP353 "Fall 2016" .
+ex:67534323 ex:COMP354 "C-" .
+ex:67534323 ex:COMP354 "Fall 2017" .
+ex:67534323 ex:COMP371 "A-" .
+ex:67534323 ex:COMP371 "Fall 2018" .
+ex:67534323 ex:COMP376 "A-" .
+ex:67534323 ex:COMP376 "Fall 2019" .
+ex:67534323 ex:COMP472 "B-" .
+ex:67534323 ex:COMP472 "Fall 2020" .
+ex:67534323 ex:COMP476 "C-" .
+ex:67534323 ex:COMP476 "Fall 2020" .
+ex:46254314 a ex:Student .
+ex:46254314 foaf:name "Zapp Brannigan" .
+ex:46254314 ex:COMP232 "F" .
+ex:46254314 ex:COMP232 "Fall 2015" .
+ex:46254314 ex:COMP232 "C-" .
+ex:46254314 ex:COMP232 "Winter 2015" .
+ex:46254314 ex:COMP248 "C-" .
+ex:46254314 ex:COMP248 "Fall 2016" .
+ex:46254314 ex:COMP249 "C-" .
+ex:46254314 ex:COMP249 "Winter 2016" .
+ex:46254314 ex:COMP335 "F" .
+ex:46254314 ex:COMP335 "Fall 2017" .
+ex:46254314 ex:COMP335 "C-" .
+ex:46254314 ex:COMP335 "Winter 2017" .
+ex:46254314 ex:COMP345 "C-" .
+ex:46254314 ex:COMP345 "Fall 2018" .
+ex:46254314 ex:COMP353 "C-" .
+ex:46254314 ex:COMP353 "Fall 2018" .
