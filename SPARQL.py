@@ -7,45 +7,9 @@ from rdflib import *
 from rdflib.namespace import RDF, FOAF
 from rdflib.plugins.sparql.processor import prepareQuery
 
-g = Graph()
-ex = Namespace("http://example.org/")
-bob = Literal('bob')
-linda = Literal('linda')
-john = Literal('john')
-COMP248 = Literal('COMP248')
-COMP248_Name = Literal("Name of the Course_248")
-COMP248_Description = Literal("Description of the course")
-COMP249 = Literal('COMP249')
-COMP249_Name = Literal("Name of the Course_249")
-COMP249_Description = Literal("Description of the course_249")
-Expert_system = Literal("Introduction to JAVA")
-Expert_system_link = URIRef("http://dbpedia.org/page/Expert_system")
-Java_Intro = Literal("Expert System")
-Java_Intro_link = URIRef("http://dbpedia.org/page/Java_Intro")
-g.add( (bob, RDF.type, FOAF.Person))
-g.add( (linda, RDF.type, FOAF.Person))
-g.add( (john, RDF.type, FOAF.Person))
-g.add( (ex.Course, RDF.type, RDFS.Class))
-g.add( (ex.Description, RDF.type, RDF.Property))
-g.add( (ex.Topic, RDF.type, RDFS.Class))
-g.add( (ex.Covers, RDF.type, RDFS.Class))
-g.add( (ex.COMP248, RDF.type, ex.Course))
-g.add( (ex.COMP248, RDF.type, RDF.Property))
-g.add( (ex.COMP248, FOAF.Name, COMP248_Name))
-g.add( (ex.COMP248, ex.Description, COMP248_Description))
-g.add( (ex.COMP249, RDF.type, ex.Course))
-g.add( (ex.COMP249, FOAF.Name, COMP249_Name))
-g.add( (ex.COMP249, ex.Description, COMP249_Description))
-g.add( (ex.Expert_system, RDF.type, ex.Topic))
-g.add( (ex.Expert_system, FOAF.name, Literal('Intro to JAVA')))
-g.add( (ex.Expert_system, RDFS.seeAlso, Expert_system_link))
-g.add( (ex.COMP248, ex.Covers, ex.Expert_system))
-g.add( (ex.Java_Intro, RDF.type, ex.Topic))
-g.add( (ex.Java_Intro, FOAF.name, Literal('Expert System')))
-g.add( (ex.Java_Intro, RDFS.seeAlso, Java_Intro_link))
-g.add( (ex.COMP249, ex.Covers, ex.Java_Intro))
 
 
+'''
 COMP248_GradeBob1 = Literal('A')
 COMP248_GradeBob2 = Literal('F')
 COMP248_GradeLinda = Literal('B')
@@ -66,7 +30,7 @@ g.add( (linda, ex.COMPLETED, ex.COMP249))
 g.add( (linda, ex.COMP249, Literal('C+')))
 g.add( (john, ex.COMPLETED, ex.COMP249))
 g.add( (john, ex.COMP249, Literal('A+')))
-
+'''
 
 def num_triples(graph):
     num = 0
@@ -123,11 +87,10 @@ def num_topics(graph):
 def course_topics(course,graph):
     q = prepareQuery('''PREFIX ex: <http://example.org/>
                         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-                        SELECT DISTINCT ?t ?l
+                        SELECT DISTINCT ?t ?topics
                         WHERE {
-                            ?course ex:Covers ?topics.
+                            ?course ex:covers ?topics.
                             ?topics foaf:name ?t.
-                            ?topics rdfs:seeAlso ?l.
                         }''')
     qres = graph.query(q, initBindings = {'course': course})
     for row in qres:
@@ -181,3 +144,31 @@ def list_topics(graph, student):
     for row in qres:
         print (row)
 
+if __name__ == '__main__':
+    
+    bob = Literal('bob')
+    linda = Literal('linda')
+    john = Literal('john')
+    ex = Namespace("http://example.org/")
+    
+    
+    g = Graph()
+    #g.parse("xmlTriples.xml", format="xml")
+    g.parse("turtleTriples.txt", format="ttl")
+ 
+    g.add( (bob, RDF.type, FOAF.Person))
+    g.add( (linda, RDF.type, FOAF.Person))
+    g.add( (john, RDF.type, FOAF.Person))
+    
+    
+    print(num_triples(g))
+    print(num_courses(g))
+    print(num_topics(g))
+    print(course_topics(ex.COMP326, g))
+    
+    
+    
+    
+    
+    
+    
