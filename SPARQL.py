@@ -87,7 +87,7 @@ def num_topics(graph):
 def course_topics(course,graph):
     q = prepareQuery('''PREFIX ex: <http://example.org/>
                         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-                        SELECT DISTINCT ?t
+                        SELECT DISTINCT ?t ?topics
                         WHERE {
                             ?course ex:covers ?topics.
                             ?topics foaf:name ?t.
@@ -155,9 +155,7 @@ if __name__ == '__main__':
     g = Graph()
     #g.parse("xmlTriples.xml", format="xml")
     g.parse("turtleTriples.txt", format="ttl")
-    
-    
-    
+ 
     g.add( (bob, RDF.type, FOAF.Person))
     g.add( (linda, RDF.type, FOAF.Person))
     g.add( (john, RDF.type, FOAF.Person))
@@ -166,7 +164,7 @@ if __name__ == '__main__':
     print(num_triples(g))
     print(num_courses(g))
     print(num_topics(g))
-    print(course_topics(ex.COMP248, g))
+    print(course_topics(ex.COMP326, g))
     
     
     
