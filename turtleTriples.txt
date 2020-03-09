@@ -25479,12 +25479,34 @@ ex:JPER298 ex:covers <http://dbpedia.org/resource/Jazz> .
 ex:JPER298 rdfs:seeAlso <http://www.concordia.ca/academics/undergraduate/calendar/current/sec31.html> .
 
 
-ex:Student a rdfs:Class .
+ex:Student a rdfs:Class ;
+ rdfs:label "Student class"@en .
 ex:name a rdf:Property .
+ex:term a rdfs:Class ;
+ rdfs:label "term class"@en .
+ex:grade a rdfs:Class ;
+ rdfs:label "grade class"@en .
 ex:Course a rdf:Property ;
     rdfs:domain ex:Student ;
     rdfs:range ex:term ;
     rdfs:range ex:grade .
+
+
+"A+" rdf:type ex:grade
+"A" rdf:type ex:grade
+"A-" rdf:type ex:grade
+"B+" rdf:type ex:grade
+"B" rdf:type ex:grade
+"B-" rdf:type ex:grade
+"C+" rdf:type ex:grade
+"C" rdf:type ex:grade
+"C-" rdf:type ex:grade
+"D+" rdf:type ex:grade
+"D" rdf:type ex:grade
+"D-" rdf:type ex:grade
+"F" rdf:type ex:grade
+
+
 ex:34515134 a ex:Student .
 ex:34515134 foaf:name "John Smith" .
 ex:34515134 ex:COMP228 "A" .
