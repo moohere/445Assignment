@@ -98,7 +98,7 @@ if __name__ == '__main__':
     pickle_out = open("courses_pickle.txt", "ab")
   
     
-    for i in range(1125, len(courses)):
+    for i in range(1416, len(courses)):
         
         try:
             index = i
@@ -115,7 +115,7 @@ if __name__ == '__main__':
     #pickle.dump(index, pickle_out)
     print(index)
     
-    for i in range(1125, index):
+    for i in range(1416, index):
         pickle.dump(courses[i], pickle_out)
     
     
