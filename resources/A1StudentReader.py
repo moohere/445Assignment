@@ -22,14 +22,14 @@ if __name__ == "__main__":
         if (not (l[2] == num)):
             num = l[2]
             toWrite.append("ex:" + num + " a ex:Student .")
-            toWrite.append("ex:" + num + " foaf:name " + "\"" + name + "\"")
+            toWrite.append("ex:" + num + " foaf:name " + "\"" + name + "\" .")
         num = l[2]
         toWrite.append("ex:" + num + " ex:" + course + " \"" + grade + "\" .")
         toWrite.append("ex:" + num + " ex:" + course + " \"" + term + "\" .")
 
     f.close();
 
-    f = open("Output Test.txt", "w")
+    f = open("Student Output Test.txt", "w")
 
     for line in toWrite:
         f.write(line + "\n")
