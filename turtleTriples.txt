@@ -25490,22 +25490,7 @@ ex:Course a rdf:Property ;
     rdfs:domain ex:Student ;
     rdfs:range ex:term ;
     rdfs:range ex:grade .
-
-
-"A+" rdf:type ex:grade
-"A" rdf:type ex:grade
-"A-" rdf:type ex:grade
-"B+" rdf:type ex:grade
-"B" rdf:type ex:grade
-"B-" rdf:type ex:grade
-"C+" rdf:type ex:grade
-"C" rdf:type ex:grade
-"C-" rdf:type ex:grade
-"D+" rdf:type ex:grade
-"D" rdf:type ex:grade
-"D-" rdf:type ex:grade
-"F" rdf:type ex:grade
-
+	
 
 ex:34515134 a ex:Student .
 ex:34515134 foaf:name "John Smith" .
