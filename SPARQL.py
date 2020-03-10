@@ -8,30 +8,6 @@ from rdflib.namespace import RDF, FOAF
 from rdflib.plugins.sparql.processor import prepareQuery
 
 
-
-'''
-COMP248_GradeBob1 = Literal('A')
-COMP248_GradeBob2 = Literal('F')
-COMP248_GradeLinda = Literal('B')
-COMP248_YearBob1 = Literal('Fall 2020')
-COMP248_YearBob2 = Literal('Fall 2018')
-g.add( (ex.COMPLETED, RDF.type, RDFS.Class))
-#g.add( (COMP248_GradeBob1, RDF.type, RDF.Property))
-g.add( (bob, ex.COMPLETED, ex.COMP248))
-g.add( (bob, ex.COMP248, COMP248_GradeBob1))
-#g.add( (COMP248_GradeBob1, ex.Term, COMP248_YearBob1))
-g.add( (bob, ex.COMP248, COMP248_GradeBob2))
-#g.add( (COMP248_GradeBob2, ex.Term, COMP248_YearBob2))
-g.add( (bob, ex.COMPLETED, ex.COMP249))
-g.add( (bob, ex.COMP249, Literal('F')))
-#g.add( (bob, ex.COMP249, Literal('B+')))
-#g.add( (Literal('B+'), ex.Term, Literal('Fall 2018')))
-g.add( (linda, ex.COMPLETED, ex.COMP249))
-g.add( (linda, ex.COMP249, Literal('C+')))
-g.add( (john, ex.COMPLETED, ex.COMP249))
-g.add( (john, ex.COMP249, Literal('A+')))
-'''
-
 def num_triples(graph):
     num = 0
     qres = graph.query(
@@ -48,10 +24,10 @@ def num_triples(graph):
 def num_students(graph):
     num = 0
     qres = graph.query(
-        """PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        """PREFIX ex: <http://example.org/>
            SELECT DISTINCT ?student
            WHERE {
-              ?student rdf:type foaf:Person .
+              ?student rdf:type ex:Student .
            }""")
     for row in qres:
         num += 1
@@ -91,7 +67,7 @@ def course_topics(course,graph):
                         WHERE {
                             ?course ex:covers ?topics.
                             ?topics foaf:name ?t.
-                        }''')
+                        }''')   
     qres = graph.query(q, initBindings = {'course': course})
     for row in qres:
         print(row)
@@ -102,13 +78,12 @@ def course_topics(course,graph):
 def list_course(graph,student):
     q = prepareQuery('''PREFIX ex: <http://example.org/>
                         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-                        SELECT DISTINCT ?c ?g
+                        SELECT DISTINCT ?course ?g
                         WHERE {
-                            ?student ex:COMPLETED ?course .
-                            ?course foaf:Name ?c .
-                            ?student ?course ?g.
+                            ?student ?foaf:name ?studentName .
+                            ?student ?course ?g .
                         }''')
-    qres = graph.query(q, initBindings = {'student': student})
+    qres = graph.query(q, initBindings = {'studentName': student})
     for row in qres:
         print (row)
         
@@ -117,11 +92,11 @@ def list_course(graph,student):
 def list_student(graph,topic):
     q = prepareQuery('''PREFIX ex: <http://example.org/>
                         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-                        SELECT DISTINCT ?s
+                        SELECT DISTINCT ?student
                         WHERE {
                             ?course ex:Covers ?topic.
-                            ?s ex:COMPLETED ?course.
                             ?s ?course ?grade.
+                            ?s foaf:name ?student
                             FILTER(?grade != 'F')
                         }''')
     qres = graph.query(q, initBindings = {'topic': topic})
@@ -135,36 +110,33 @@ def list_topics(graph, student):
                         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                         SELECT DISTINCT ?t
                         WHERE {
+                            ?student foaf:name ?studentName
                             ?student ex:COMPLETED ?course .
                             ?student ?course ?grade .
                             ?course ex:Covers ?t .
                             FILTER(?grade != 'F')
                         }''')
-    qres = graph.query(q, initBindings = {'student': student})
+    qres = graph.query(q, initBindings = {'studentName': student})
     for row in qres:
         print (row)
 
 if __name__ == '__main__':
     
-    bob = Literal('bob')
-    linda = Literal('linda')
-    john = Literal('john')
-    ex = Namespace("http://example.org/")
-    
     
     g = Graph()
-    #g.parse("xmlTriples.xml", format="xml")
+    
     g.parse("turtleTriples.txt", format="ttl")
+    ex = Namespace("http://example.org/")
+    
+    ##print(course_topics(ex.COMP6231,g))
+    student = Literal('Zapp Brannigan')
+    print(list_course(g, student))
  
-    g.add( (bob, RDF.type, FOAF.Person))
-    g.add( (linda, RDF.type, FOAF.Person))
-    g.add( (john, RDF.type, FOAF.Person))
     
     
-    print(num_triples(g))
-    print(num_courses(g))
-    print(num_topics(g))
-    print(course_topics(ex.COMP326, g))
+    
+    
+    
     
     
     
