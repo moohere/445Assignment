@@ -80,7 +80,7 @@ def list_course(graph,student):
                         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                         SELECT DISTINCT ?course ?g
                         WHERE {
-                            ?student ?foaf:name ?studentName .
+                            ?student foaf:name ?studentName .
                             ?student ?course ?g .
                         }''')
     qres = graph.query(q, initBindings = {'studentName': student})
